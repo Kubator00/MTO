@@ -7,7 +7,11 @@ var lingeringLine = "";
 function my_printf(format_string,param){
 	for(var i=0;i<format_string.length;i++){
 		if((format_string.charAt(i) == '#') && (format_string.charAt(i+1) == 'k')){
-			process.stdout.write(param);
+		let result = '';
+		for(char of param){
+			result += (char === char.toUpperCase()) ? char.toLowerCase() : char.toUpperCase();   
+		}
+			process.stdout.write(result);
 			i++;
 		}else{
 			process.stdout.write(format_string.charAt(i));
