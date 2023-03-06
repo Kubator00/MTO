@@ -1,0 +1,19 @@
+<body>
+
+<form method="get">
+
+<input type="videoFile"/>
+<input type="audioFile"/>
+</form>
+
+
+</body>
+
+<script>
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const videoFile = urlParams.get('videoFile')
+
+</script>
